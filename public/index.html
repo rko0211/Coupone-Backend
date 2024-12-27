@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Express + Prisma + TypeScript Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        h1,
+        h2 {
+            color: #333;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Express + Prisma + TypeScript Documentation</h1>
+    <p>Welcome to the Express API documentation!</p>
+
+    <h2>Setup Instructions</h2>
+    <ol>
+        <li>Clone this repository:</li>
+        <pre><code>git clone &lt;repository-url&gt;</code></pre>
+
+        <li>Navigate to the project directory:</li>
+        <pre><code>cd express-typescript-prisma</code></pre>
+
+        <li>Install dependencies:</li>
+        <pre><code>npm install</code></pre>
+
+        <li>Set up the database connection in the <code>.env</code> file:</li>
+        <pre><code>DATABASE_URL="file:./dev.db"
+PORT=3000</code></pre>
+
+        <li>Initialize the database with Prisma:</li>
+        <pre><code>npx prisma migrate dev --name init</code></pre>
+
+        <li>Start the development server:</li>
+        <pre><code>npm run dev</code></pre>
+    </ol>
+
+    <h2>API Endpoints</h2>
+    <h3>1. Get All Users</h3>
+    <p>Retrieve all users.</p>
+    <pre><code>GET /users</code></pre>
+
+    <h3>2. Create a User</h3>
+    <p>Create a new user.</p>
+    <pre><code>POST /users</code></pre>
+    <p>Body:</p>
+    <pre><code>{
+  "name": "John Doe",
+  "email": "john.doe@example.com"
+}</code></pre>
+
+    <h2>Notes</h2>
+    <ul>
+        <li>Make sure you have Node.js and npm installed.</li>
+        <li>Do not share the <code>.env</code> file publicly.</li>
+    </ul>
+</body>
+
+</html>

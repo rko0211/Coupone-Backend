@@ -41,8 +41,6 @@ coverage/
 .pnp.cjs
 .pnp.loader.mjs
 
-# Static Files
-/public/*.html
 
 # IDE Specific
 *.iml
