@@ -1,0 +1,54 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Environment Variables
+.env
+
+# Logs
+logs
+*.log
+logs/*.log
+
+# Editor Directories
+.vscode/
+.idea/
+
+# Build Output
+/dist/
+/build/
+
+# Prisma
+prisma/dev.db
+prisma/dev.db-journal
+prisma/migrations/
+
+# Miscellaneous
+.DS_Store
+Thumbs.db
+
+# Cache
+.cache/
+
+# Testing
+coverage/
+
+# Typescript
+*.tsbuildinfo
+
+# Dependency Graphs
+.pnp.cjs
+.pnp.loader.mjs
+
+# Static Files
+/public/*.html
+
+# IDE Specific
+*.iml
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
