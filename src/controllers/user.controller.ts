@@ -187,7 +187,6 @@ export const signIn = asyncHandler(async (req: Request, res: Response) => {
         },
         RememberMe
       );
-      console.log("error 3");
 
       try {
         const checkCredentials = await checkUserCredentials(

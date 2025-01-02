@@ -17,15 +17,14 @@ export const generateAndSetToken = (
   cookieName: string = "authToken"
 ): void => {
   // Generate a JWT token
-  console.log("error 1");
-  console.log(SECRET_KEY);
+
   const token = jwt.sign(payload, SECRET_KEY);
 
   // Cookie options
   const cookieOptions: any = {
     httpOnly: true, // Prevents access by JavaScript
-    // secure: process.env.NODE_ENV === "production", // Use secure cookies in production
-    sameSite: "strict", // Helps prevent CSRF attacks
+    secure: process.env.NODE_ENV === "production", // Use secure cookies in production
+    sameSite: "none", // Helps prevent CSRF attacks
   };
 
   // If rememberMe is true, set cookie expiration to 1 week
@@ -35,5 +34,4 @@ export const generateAndSetToken = (
 
   // Set the cookie in the response
   res.cookie(cookieName, token, cookieOptions);
-  console.log("error 2");
 };
