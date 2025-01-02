@@ -24,7 +24,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: "http://localhost:5173", // Replace with your client URL
+    origin: "https://coupone.vercel.app/", // Replace with your client URL
     credentials: true,
   })
 );
