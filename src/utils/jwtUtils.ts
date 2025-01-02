@@ -24,7 +24,6 @@ export const generateAndSetToken = (
   const cookieOptions: any = {
     httpOnly: true, // Prevents access by JavaScript
     secure: process.env.NODE_ENV === "production", // Use secure cookies in production
-    sameSite: "none", // Helps prevent CSRF attacks
   };
 
   // If rememberMe is true, set cookie expiration to 1 week
