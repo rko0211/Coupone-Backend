@@ -57,6 +57,10 @@ app.get("/userdetails", async (req, res) => {
   }
 });
 
+app.get("/", (req, res) => {
+  res.json({ message: "Hello World" });
+});
+
 // Serve Static Files
 app.use(express.static(path.join(__dirname, "../public")));
 
