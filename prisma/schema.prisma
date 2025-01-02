@@ -8,8 +8,53 @@ datasource db {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  name      String
-  email     String   @unique
+  id          Int     @id @default(autoincrement())
+  email       String  @unique // User's email
+  countrycode String
+  phone       String  @unique // Mandatory phone number
+  password    String // Hashed password
+  firstName   String?
+  middleName  String?
+  lastName    String?
+  gender      String?
+
+  isEmailOTPVerificationComplete Boolean @default(false)
+
+  isProfileComplete Boolean @default(false) // Tracks if Step 2 is completed
+
+  AddressRecords AddressRecord[]
+
   createdAt DateTime @default(now())
+}
+
+// enum Gender {
+//   MALE
+//   FEMALE
+//   OTHER
+// }
+
+model AddressRecord {
+  id              Int      @id @default(autoincrement())
+  userId          Int
+  userEmail       String
+  userPhone       String
+  houseno         Int?
+  citytownvillage String
+  district        String
+  state           String
+  country         String
+  createdAt       DateTime @default(now())
+  user            User     @relation(fields: [userId], references: [id])
+
+  @@index([userId]) // Optional, for faster lookups by userId
+}
+
+model OTPRecord {
+  id        Int       @id @default(autoincrement())
+  userId    Int
+  userEmail String
+  userPhone String
+  otp       String?
+  createdAt DateTime  @default(now())
+  expiresAt DateTime?
 }
