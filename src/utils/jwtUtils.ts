@@ -22,7 +22,7 @@ export const generateAndSetToken = (
   // Cookie options
   const cookieOptions: any = {
     httpOnly: true, // Prevents access by JavaScript
-    secure: process.env.NODE_ENV === "production", // Use secure cookies in production
+    // secure: process.env.NODE_ENV === "production", // Use secure cookies in production
     sameSite: "strict", // Helps prevent CSRF attacks
   };
 
