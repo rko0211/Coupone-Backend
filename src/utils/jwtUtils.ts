@@ -18,6 +18,7 @@ export const generateAndSetToken = (
 ): void => {
   // Generate a JWT token
   console.log("error 1");
+  console.log(SECRET_KEY);
   const token = jwt.sign(payload, SECRET_KEY);
 
   // Cookie options
