@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 import { Response } from "express";
 
-const SECRET_KEY = process.env.JWT_SECRET || "Prakash123@"; // Use environment variables for production
+const SECRET_KEY = process.env.JWT_SECRET; // Use environment variables for production
 
 /**
  * Generates a JWT token and stores it in a cookie.

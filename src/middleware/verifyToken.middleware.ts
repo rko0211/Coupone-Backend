@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 const jwt = require("jsonwebtoken");
 
-const SECRET_KEY = "Prakash123@"; // Replace with a secure key in production
+const SECRET_KEY = process.env.JWT_SECRET; // Replace with a secure key in production
 
 // Extend Express Request interface to include `user` property
 declare global {
@@ -13,7 +13,8 @@ declare global {
 }
 
 const verifyToken = (req: Request, res: Response, next: NextFunction): void => {
-  const token = req.cookies.authToken; // Retrieve token from cookies
+  const token =
+    req.cookies.authToken || req.headers.authorization?.split(" ")[1]; // Retrieve token from cookies
 
   if (!token) {
     res.status(401).json({ message: "Authentication token is required." });
