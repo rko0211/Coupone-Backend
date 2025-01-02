@@ -187,7 +187,7 @@ export const signIn = asyncHandler(async (req: Request, res: Response) => {
         },
         RememberMe
       );
-      console.log("error 1");
+      console.log("error 3");
 
       try {
         const checkCredentials = await checkUserCredentials(
@@ -195,7 +195,7 @@ export const signIn = asyncHandler(async (req: Request, res: Response) => {
           userRecord.email,
           userRecord.phone
         );
-        console.log("error 2");
+
         // console.log(checkCredentials);
         if (checkCredentials === "verifyAccount") {
           res.status(203).json({ message: "Please Verify Your Account!" });

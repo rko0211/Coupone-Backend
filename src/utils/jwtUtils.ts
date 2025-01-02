@@ -17,6 +17,7 @@ export const generateAndSetToken = (
   cookieName: string = "authToken"
 ): void => {
   // Generate a JWT token
+  console.log("error 1");
   const token = jwt.sign(payload, SECRET_KEY);
 
   // Cookie options
@@ -33,4 +34,5 @@ export const generateAndSetToken = (
 
   // Set the cookie in the response
   res.cookie(cookieName, token, cookieOptions);
+  console.log("error 2");
 };
