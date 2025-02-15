@@ -2,13 +2,13 @@ const nodemailer = require("nodemailer");
 const ownerEmail = process.env.OWNEREMAIL;
 const Passowrd = process.env.EMAILPASSWORD;
 
-
 // Email OTP Post request Handle
 export const OTPEmail = async (otp: string, userEmail: string) => {
   try {
     // Nodemailer transporter configuration
     const transporter = nodemailer.createTransport({
       service: "gmail", // You can use other services like Outlook, Yahoo, etc.
+      secure: true,
       auth: {
         user: ownerEmail, // Your email address
         pass: Passowrd, // Your email password or app password
@@ -17,7 +17,7 @@ export const OTPEmail = async (otp: string, userEmail: string) => {
 
     // Email options
     const mailOptions = {
-      from: "prakashmondalbnk@gmail.com",
+      from: ownerEmail,
       to: userEmail, // Send email to the user
       subject: "Your One Time Password (OTP)",
       html: `<div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
@@ -55,6 +55,7 @@ export const verifyOTPEmail = async (userEmail: string) => {
   try {
     const transporter = nodemailer.createTransport({
       service: "gmail", // You can use other services like Outlook, Yahoo, etc.
+      secure: true,
       auth: {
         user: ownerEmail, // Your email address
         pass: Passowrd, // Your email password or app password
@@ -63,7 +64,7 @@ export const verifyOTPEmail = async (userEmail: string) => {
 
     // Email options
     const mailOptions = {
-      from: "prakashmondalbnk@gmail.com",
+      from: ownerEmail,
       to: userEmail, // Send email to the user
       subject: "Thank You for Registering with Us!",
       html: `<div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
