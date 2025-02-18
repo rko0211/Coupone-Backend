@@ -10,6 +10,7 @@ import uploadCartItems from "../controllers/uploadCartIems.controller";
 import sendCartItems from "../controllers/sendCartItems.controller";
 import uploadProducts from "../controllers/uploadProducts.controller";
 import sendFilterProducts from "../controllers/sendFilterProducts.controller";
+import updateItemQuantity from "../controllers/updateItemQuantity.controller";
 const router = Router();
 
 // Define User routes
@@ -21,6 +22,7 @@ router.post("/updateuser", verifyToken, updateUser);
 router.post("/login", signIN);
 
 router.get("/delivery", sendCartItems);
+router.put("/delivery", updateItemQuantity);
 router.get("/filterproducts", sendFilterProducts);
 
 // Admin Routes

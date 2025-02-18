@@ -4,6 +4,7 @@ export interface ICartItemsRecord extends Document {
   companyImage: string;
   discountText: string;
   discountImage: string;
+  itemQuantity: number;
 }
 
 const CartItemsRecordSchema: Schema = new Schema({
@@ -17,6 +18,10 @@ const CartItemsRecordSchema: Schema = new Schema({
   },
   discountImage: {
     type: String,
+  },
+  itemQuantity: {
+    type: Number,
+    default: 0,
   },
   createdAt: {
     type: Date,
